@@ -1,0 +1,3 @@
+run="python AdventuresGuild/LigerBully.py"
+language="python3"
+onBoot="echo Booting up!"
