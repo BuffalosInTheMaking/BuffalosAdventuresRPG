@@ -1,3 +1,37 @@
+def game_over(a) :
+  print("You lose\n"+a)
+
+def human_shotgun() :
+  print("\nThe human have a shotgun")
+  print("1). Stay there")
+  print("2). Run Away")
+  answer = input(">")
+  if answer == 1 :
+    game_over("The human kills you with the shotgun")
+  elif answer == 2 :
+    game_over("The human is very good with the shotgun and he kills you")
+
+
+def human() :
+  print("\nYou find a human")
+  print("1). Walk")
+  print("2). Walk Away")
+  answer = input(">")
+  if answer == "1" :
+    human_shotgun()
+  elif answer == "2" :
+    print("You survive the human")
+
+def open_plains_room() :
+  print("\n1). Take a nap")
+  print("2). Walk")
+  answer = input(">")
+  if answer == "1" :
+    game_over("A liger kills you")
+  elif answer == "2" :
+    human()
+    
+
 def start():
   print("\nYou find yourself panting from a Liger that chased you across open plains. \n BTWs you are a Buffalo.")
   print("There is a cave you can hid in to your left and river to cross on your right, which one do you take? (l or r)")
@@ -46,11 +80,9 @@ def river_entrance():
   print("1). Turn back and head for the cave.")
   print("2). Try to cross the river.")
 
-  # take input()
   answer = input(">")
 
   if answer == "1":
-    # head into cave_entrance()
     cave_entrance()
   elif answer == "2":
     # the player is dead, call game_over() with "reason"
