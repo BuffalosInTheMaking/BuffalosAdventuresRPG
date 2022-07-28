@@ -1,16 +1,61 @@
 def game_over(a) :
   print("You lose\n"+a)
 
+def water():
+  print("\nYou returned to the river and drank some water")
+  print("Luckily, the poinson subsided afterwards")
+  print("1). Look for food")
+  print("2). Take a well-deserved nap")
+  answer = input(">")
+  if answer == "1" :
+    print("You were able to find some food and survive")
+  elif answer == "2" :
+    game_over("You starve to death in your sleep")
+
+def feed_liger():
+  print("\nYou sneak up on the liger and lay the berries behind it")
+  print("The liger sees the berries, eats them, and then becomes poisoned and dies!")
+  print("1). Eat the meat")
+  print("2). Save the meat for later")
+  answer = input(">")
+  if answer == "1" :
+    print("You ate the liger meat and survived")
+  elif answer == "2" :
+    game_over("The smell of the liger meat attracts other predators and they kill you")
+
+def poisoned():
+  print("\nYou were poisoned by the berries!")
+  print("1). Take a nap")
+  print("2). Drink water")
+  answer = input(">")
+  if answer == "1" :
+    game_over("You fall asleep, but never wake up")
+  elif answer == "2" :
+    water()
+
+def tired_hungry():
+  print("\nAfter walking away from the human, you start to feel tired and hungry")
+  print("Luckily, you found a bush with some berries")
+  print("1). Eat them")
+  print("2). Do not eat")
+  print("3). Feed to liger")
+  answer = input(">")
+  if answer == "1" :
+    poisoned()
+  elif answer == "2" :
+    game_over("You died of starvation")
+  elif answer == "3":
+    feed_liger()
+
 def human_shotgun() :
   print("\nThe human have a shotgun")
   print("1). Stay there")
   print("2). Run Away")
   answer = input(">")
-  if answer == 1 :
+  if answer == "1" :
     game_over("The human kills you with the shotgun")
-  elif answer == 2 :
+  elif answer == "2" :
     game_over("The human is very good with the shotgun and he kills you")
-
 
 def human() :
   print("\nYou find a human")
@@ -20,7 +65,7 @@ def human() :
   if answer == "1" :
     human_shotgun()
   elif answer == "2" :
-    print("You survive the human")
+    tired_hungry()
 
 def open_plains_room() :
   print("\n1). Take a nap")
